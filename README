@@ -1,8 +1,15 @@
 
 First Download the dataset "PAKDD-3year" folder and now create a new folder named "entities" and keep all the above code files just outside to these two folders.
 
-1) Use text.sh to produce the textfiles from the pdf in the same folder of PAKDD-3year. This file should be out of that folder.
-   Format of text files : Name_of_the_pdf_text
+1) The set of research papers will be given in a folder which will be given as a command line argument to text.sh
 
-2) After that run sent_token.py to generate a file of filtered named entities for each pdf separately. This file should also be out of the PAKDD-3year folder.
-   Format : Name_of_the_pdf_entities
+Command : bash text.sh <foldername>
+
+2) It will generate the text files in a folder named "Texts"
+
+3) And Named Entities will be extarcted and stored in "entities" folder 
+Format : <filename>_entities
+
+4) From those entities "phase31.py" will separate True positives and False positives, and give two files in a separate folder "Output"
+
+Format : Output/<filename>_tp and Output/<filename>_fp
